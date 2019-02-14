@@ -5,11 +5,9 @@
   gather_facts: false
 
   tasks:
-          #          - name: Install EPEL release for nginx
-          #            yum: name=epel-release state=present
           - name: init motd file
             copy:
-                    content: 'ijdsddddddddddddddddddddddddddddddddddddddddddddddddddnitialmotdtextcheck'
+                    content: ''
                     dest: /etc/motd
           - name: copy script
             copy:
@@ -23,7 +21,7 @@
             copy:
                     src: ../service/motd.timer
                     dest: /etc/systemd/system/motd.timer
-          - name: motd service is running
+          - name: start motd service
             systemd:
                     state: started
                     name: motd
