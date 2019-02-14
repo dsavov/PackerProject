@@ -1,0 +1,33 @@
+---
+- name: initial setup
+  hosts: all
+  become: true
+  gather_facts: false
+
+  tasks:
+          #          - name: Install EPEL release for nginx
+          #            yum: name=epel-release state=present
+          - name: init motd file
+            copy:
+                    content: 'ijdsddddddddddddddddddddddddddddddddddddddddddddddddddnitialmotdtextcheck'
+                    dest: /etc/motd
+          - name: copy script
+            copy:
+                    src: ../scripts/motd.py
+                    dest: /opt/motd.py
+          - name: copy service file
+            copy:
+                    src: ../service/motd.service
+                    dest: /etc/systemd/system/motd.service
+          - name: copy timer file
+            copy:
+                    src: ../service/motd.timer
+                    dest: /etc/systemd/system/motd.timer
+          - name: motd service is running
+            systemd:
+                    state: started
+                    name: motd
+          - name: display motd on initial login
+            lineinfile:
+                    path: /etc/bashrc
+                    line: echo "$(</etc/motd)"
