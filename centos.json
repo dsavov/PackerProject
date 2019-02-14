@@ -35,8 +35,8 @@
     [
       {
         "type": "docker-tag",
-        "repository": "booyah/packer",
-        "tag": "centos7_0.1"
+        "repository": "local",
+        "tag": "centos"
       }
     ]
   ]

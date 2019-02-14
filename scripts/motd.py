@@ -12,6 +12,6 @@ try:
         outfile.write("current_datetime:" + current_datetime + "\n")
         outfile.write("hash_current_datetime:" + hash_current_datetime + "\n")
         outfile.write("hostname:" + hostname + "\n")
-        outfile.write("ip_address" + ip_addr + "\n")
+        outfile.write("ip_address:" + ip_addr + "\n")
 except IOError:
     print("Couldn't open/create/write to file:" + filepath)
