@@ -11,7 +11,7 @@ packer build centos.json
 ```
 ## Running a container from the image
 ```
-sudo docker run --privileged -dit --name=tmp --cap-add=SYS_ADMIN -e "container=docker" -v /sys/fs/cgroup:/sys/fs/cgroup:ro --tmpfs /run local:centos /usr/sbin/init
+docker run --privileged -dit --name=tmp --cap-add=SYS_ADMIN -e "container=docker" -v /sys/fs/cgroup:/sys/fs/cgroup:ro --tmpfs /run local:centos /usr/sbin/init
 ```
 ## Connect to the container
 ```
