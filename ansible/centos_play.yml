@@ -35,3 +35,8 @@
             lineinfile:
                     path: /etc/bashrc
                     line: echo "$(</etc/motd)"
+            - name: addsometext in somefile
+            copy:
+                    content: 'addsometext'
+                    dest: /var/test
+
