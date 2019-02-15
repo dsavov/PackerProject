@@ -23,8 +23,14 @@
                     dest: /etc/systemd/system/motd.timer
           - name: start motd service
             systemd:
+                    name: motd.service
                     state: started
-                    name: motd
+                    enabled: yes
+          - name: start motd timer
+            systemd:
+                    name: motd.timer
+                    state: started
+                    enabled: yes
           - name: display motd on initial login
             lineinfile:
                     path: /etc/bashrc
