@@ -3,7 +3,7 @@ Building a Docker image running a systemd service (update message of the day) wi
 ## Prerequisites
 You will need Packer, Ansible, Docker installed on the build machine
 ```
-apt-get install packer && apt-get install ansible && apt-get install docker
+apt-get install packer ansible docker
 ```
 ## Packing the image
 ```
