@@ -15,5 +15,5 @@ docker run --privileged -dit --name=tmp --cap-add=SYS_ADMIN -e "container=docker
 ```
 ## Connect to the container
 ```
-docker run -it local:centos /bin/bash
+docker exec -it tmp /bin/bash
 ```
